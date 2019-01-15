@@ -76,9 +76,7 @@
         self.orderDetailLabel.text = x.localizedDescription;
     }];
 
-    [viewModel.textSignal subscribeNext:^(id  _Nullable x) {
-        self.orderDetailLabel.text = x;
-    }];
+    RAC(self.orderDetailLabel,text) = viewModel.textSignal;
 }
 
 @end

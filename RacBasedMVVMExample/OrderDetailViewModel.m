@@ -16,9 +16,9 @@
 {
     
     NSArray *signals = @[RACObserve(hotelTitleVM, title),
-                         RACObserve(nameInputVM , inputText),
-                         RACObserve(phoneInputVM, inputText)];
-    
+                         RACChannelTo(nameInputVM , inputText),
+                         RACChannelTo(phoneInputVM, inputText)];
+
     _textSignal = [RACSignal combineLatest:signals
                                     reduce:^id (NSString *title, NSString *name, NSString *phone) {
                                         return [NSString stringWithFormat:@"%@ 将入住 %@\n联系电话：%@",

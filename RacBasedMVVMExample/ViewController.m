@@ -24,6 +24,12 @@
 {
     NSMutableArray *cellArr;
 }
+
+@property (nonatomic,strong) NSString *password;
+@property (nonatomic,strong) NSString *passwordConfirmation;
+
+@property (nonatomic,assign) BOOL      createEnabled;
+
 @end
 
 @implementation ViewController
@@ -74,11 +80,11 @@
     [hotelTitleCell bindViewModel:hotelTitleVM];
     [cellArr addObject:hotelTitleCell];
 
-    LabelAndTextFieldViewModel *personLabelAndTextFieldCellVM = [[LabelAndTextFieldViewModel alloc] init];
+    LabelAndTextFieldViewModel *personLabelAndTextFieldVM = [[LabelAndTextFieldViewModel alloc] init];
     LabelAndTextFieldCell *personLabelAndTextFieldCell    = [[LabelAndTextFieldCell alloc] init];
     personLabelAndTextFieldCell.titleLabel.text = @"入住人:";
     personLabelAndTextFieldCell.isw_height = 44;
-    [personLabelAndTextFieldCell bindViewModel:personLabelAndTextFieldCellVM];
+    [personLabelAndTextFieldCell bindViewModel:personLabelAndTextFieldVM];
     [cellArr addObject:personLabelAndTextFieldCell];
 
     LabelAndTextFieldViewModel *phoneLabelAndTextFieldVM = [[LabelAndTextFieldViewModel alloc] init];
@@ -90,12 +96,13 @@
 
     OrderDetailViewModel *orderDetailViewModel = [[OrderDetailViewModel alloc] init];
     [orderDetailViewModel combineHotelTitleViewModel:hotelTitleVM
-                                  nameInputViewModel:personLabelAndTextFieldCellVM
+                                  nameInputViewModel:personLabelAndTextFieldVM
                                  phoneInputViewModel:phoneLabelAndTextFieldVM];
     OrderDetailCell *orderDetailCell = [[OrderDetailCell alloc] init];
     orderDetailCell.isw_height = 120;
     [orderDetailCell bindViewModel:orderDetailViewModel];
     [cellArr addObject:orderDetailCell];
+    
 }
 
 #pragma mark - table
