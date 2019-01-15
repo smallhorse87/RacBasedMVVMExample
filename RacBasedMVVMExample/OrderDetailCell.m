@@ -24,40 +24,40 @@
 -(void)buildUI
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+
     //一个label，两个按钮
-    UILabel *orderDetailLabel = [[UILabel alloc] init];
-    orderDetailLabel.backgroundColor = [UIColor clearColor];
-    orderDetailLabel.textColor = [UIColor blackColor];
-    orderDetailLabel.font = [UIFont systemFontOfSize:15.0];
-    orderDetailLabel.numberOfLines = 2;
-    [self.contentView addSubview:orderDetailLabel];
-    [orderDetailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    _orderDetailLabel = [[UILabel alloc] init];
+    _orderDetailLabel.backgroundColor = [UIColor clearColor];
+    _orderDetailLabel.textColor = [UIColor blackColor];
+    _orderDetailLabel.font = [UIFont systemFontOfSize:15.0];
+    _orderDetailLabel.numberOfLines = 2;
+    [self.contentView addSubview:_orderDetailLabel];
+    [_orderDetailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView). offset(12);
         make.trailing.equalTo(self.contentView).offset(-12);
         make.top.equalTo(self.contentView).offset(8);
         make.height.equalTo(@60);
     }];
-    orderDetailLabel.text = @"";
+    _orderDetailLabel.text = @"";
 
-    UIButton *submitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    submitBtn.backgroundColor = [UIColor blueColor];
-    [submitBtn setTitle:@"提交" forState:UIControlStateNormal];
-    [self.contentView addSubview:submitBtn];
-    [submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    _submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _submitButton.backgroundColor = [UIColor blueColor];
+    [_submitButton setTitle:@"提交" forState:UIControlStateNormal];
+    [self.contentView addSubview:_submitButton];
+    [_submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView). offset(12);
-        make.top.equalTo(orderDetailLabel.mas_bottom).offset(8);
+        make.top.equalTo(_orderDetailLabel.mas_bottom).offset(8);
         make.height.equalTo(@30);
         make.width.equalTo(@80);
     }];
 
-    UIButton *clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    clearButton.backgroundColor = [UIColor grayColor];
-    [clearButton setTitle:@"清空输入" forState:UIControlStateNormal];
-    [self.contentView addSubview:clearButton];
-    [clearButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(submitBtn.mas_right). offset(8);
-        make.top.equalTo(orderDetailLabel.mas_bottom).offset(8);
+    _clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _clearButton.backgroundColor = [UIColor grayColor];
+    [_clearButton setTitle:@"清空输入" forState:UIControlStateNormal];
+    [self.contentView addSubview:_clearButton];
+    [_clearButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_submitButton.mas_right). offset(8);
+        make.top.equalTo(_orderDetailLabel.mas_bottom).offset(8);
         make.height.equalTo(@30);
         make.width.equalTo(@80);
     }];
@@ -67,7 +67,18 @@
 {
     // 操作绑定
     self.clearButton.rac_command = viewModel.clearCommand;
+    
+    // 信号绑定
+    self.submitButton.rac_command = viewModel.submitCommand;
+    @weakify(self)
+    [self.submitButton.rac_command.errors subscribeNext:^(NSError *x) {
+        @strongify(self)
+        self.orderDetailLabel.text = x.localizedDescription;
+    }];
 
+    [viewModel.textSignal subscribeNext:^(id  _Nullable x) {
+        self.orderDetailLabel.text = x;
+    }];
 }
 
 @end

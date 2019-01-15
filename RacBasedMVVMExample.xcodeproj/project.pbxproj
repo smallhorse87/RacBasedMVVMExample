@@ -21,6 +21,7 @@
 		8183CA5921ED911900133FCA /* LabelAndTextFieldViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA5821ED911900133FCA /* LabelAndTextFieldViewModel.m */; };
 		8183CA5C21EDA8EA00133FCA /* OrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA5B21EDA8EA00133FCA /* OrderDetailCell.m */; };
 		8183CA5F21EDA8FE00133FCA /* OrderDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA5E21EDA8FE00133FCA /* OrderDetailViewModel.m */; };
+		8183CA6221EDBAC100133FCA /* PhoneInputViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA6121EDBAC100133FCA /* PhoneInputViewModel.m */; };
 		C59B2F157BB2BE8E544634B3 /* libPods-RacBasedMVVMExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 249131B1B8CC9D5EF7684F00 /* libPods-RacBasedMVVMExample.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		8183CA5B21EDA8EA00133FCA /* OrderDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailCell.m; sourceTree = "<group>"; };
 		8183CA5D21EDA8FE00133FCA /* OrderDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewModel.h; sourceTree = "<group>"; };
 		8183CA5E21EDA8FE00133FCA /* OrderDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewModel.m; sourceTree = "<group>"; };
+		8183CA6021EDBAC100133FCA /* PhoneInputViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneInputViewModel.h; sourceTree = "<group>"; };
+		8183CA6121EDBAC100133FCA /* PhoneInputViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneInputViewModel.m; sourceTree = "<group>"; };
 		EDFDD29FB197B379FD354C1B /* Pods-RacBasedMVVMExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RacBasedMVVMExample.debug.xcconfig"; path = "Target Support Files/Pods-RacBasedMVVMExample/Pods-RacBasedMVVMExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +125,8 @@
 				8183CA5B21EDA8EA00133FCA /* OrderDetailCell.m */,
 				8183CA5D21EDA8FE00133FCA /* OrderDetailViewModel.h */,
 				8183CA5E21EDA8FE00133FCA /* OrderDetailViewModel.m */,
+				8183CA6021EDBAC100133FCA /* PhoneInputViewModel.h */,
+				8183CA6121EDBAC100133FCA /* PhoneInputViewModel.m */,
 			);
 			path = RacBasedMVVMExample;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				8183CA5C21EDA8EA00133FCA /* OrderDetailCell.m in Sources */,
 				8183CA4021ED76A400133FCA /* main.m in Sources */,
 				8183CA4A21ED8C9A00133FCA /* MVVMBaseCell.m in Sources */,
+				8183CA6221EDBAC100133FCA /* PhoneInputViewModel.m in Sources */,
 				8183CA4D21ED8CAB00133FCA /* HotelTitleCell.m in Sources */,
 				8183CA5621ED910400133FCA /* LabelAndTextFieldCell.m in Sources */,
 				8183CA5F21EDA8FE00133FCA /* OrderDetailViewModel.m in Sources */,

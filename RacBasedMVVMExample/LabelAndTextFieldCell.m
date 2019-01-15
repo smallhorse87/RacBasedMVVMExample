@@ -14,36 +14,36 @@
 
 @implementation LabelAndTextFieldCell
 
-- (instancetype)initWithTitle:(NSString*)title
+- (instancetype)init
 {
     self = [super init];
     if (self) {
-        [self buildUI:title];
+        [self buildUI];
     }
     return self;
 }
 
-- (void)buildUI:(NSString*)title
+- (void)buildUI
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.textColor = [UIColor blackColor];
-    titleLabel.font = [UIFont systemFontOfSize:15.0];
-    [self.contentView addSubview:titleLabel];
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    _titleLabel = [[UILabel alloc] init];
+    _titleLabel.backgroundColor = [UIColor clearColor];
+    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.font = [UIFont systemFontOfSize:15.0];
+    [self.contentView addSubview:_titleLabel];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(12);
         make.width.equalTo(@70);
         make.centerY.equalTo(self.contentView);
     }];
-    titleLabel.text = title;
+    _titleLabel.text = nil;
 
     _textField = [[UITextField alloc] initWithFrame:CGRectZero];
     _textField.backgroundColor     = [UIColor grayColor];
     [self.contentView addSubview:_textField];
     [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(titleLabel.mas_right).offset(12);
+        make.left.equalTo(_titleLabel.mas_right).offset(12);
         make.trailing.equalTo(self.contentView).offset(-12);
         make.centerY.equalTo(self.contentView);
     }];

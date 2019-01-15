@@ -67,28 +67,33 @@
     cellArr = [[NSMutableArray alloc] init];
     
     //标题单元格
+    HotelTitleViewModel *hotelTitleVM = [[HotelTitleViewModel alloc] init];
     HotelTitleCell *hotelTitleCell = [[HotelTitleCell alloc] init];
     hotelTitleCell.isw_height = 30;
-    HotelTitleViewModel *hotelTitleVM = [[HotelTitleViewModel alloc] init];
     hotelTitleVM.title = @"美团酒店-望京国际研发园店";
     [hotelTitleCell bindViewModel:hotelTitleVM];
     [cellArr addObject:hotelTitleCell];
 
-    LabelAndTextFieldCell *personLabelAndTextFieldCell    = [[LabelAndTextFieldCell alloc] initWithTitle:@"入住人:"];
-    personLabelAndTextFieldCell.isw_height = 44;
     LabelAndTextFieldViewModel *personLabelAndTextFieldCellVM = [[LabelAndTextFieldViewModel alloc] init];
+    LabelAndTextFieldCell *personLabelAndTextFieldCell    = [[LabelAndTextFieldCell alloc] init];
+    personLabelAndTextFieldCell.titleLabel.text = @"入住人:";
+    personLabelAndTextFieldCell.isw_height = 44;
     [personLabelAndTextFieldCell bindViewModel:personLabelAndTextFieldCellVM];
     [cellArr addObject:personLabelAndTextFieldCell];
 
-    LabelAndTextFieldCell *phoneLabelAndTextFieldCell    = [[LabelAndTextFieldCell alloc] initWithTitle:@"手机号:"];
-    phoneLabelAndTextFieldCell.isw_height = 44;
     LabelAndTextFieldViewModel *phoneLabelAndTextFieldVM = [[LabelAndTextFieldViewModel alloc] init];
+    LabelAndTextFieldCell *phoneLabelAndTextFieldCell    = [[LabelAndTextFieldCell alloc] init];
+    phoneLabelAndTextFieldCell.titleLabel.text = @"手机号:";
+    phoneLabelAndTextFieldCell.isw_height = 44;
     [phoneLabelAndTextFieldCell bindViewModel:phoneLabelAndTextFieldVM];
     [cellArr addObject:phoneLabelAndTextFieldCell];
 
+    OrderDetailViewModel *orderDetailViewModel = [[OrderDetailViewModel alloc] init];
+    [orderDetailViewModel combineHotelTitleViewModel:hotelTitleVM
+                                  nameInputViewModel:personLabelAndTextFieldCellVM
+                                 phoneInputViewModel:phoneLabelAndTextFieldVM];
     OrderDetailCell *orderDetailCell = [[OrderDetailCell alloc] init];
     orderDetailCell.isw_height = 120;
-    OrderDetailViewModel *orderDetailViewModel = [[OrderDetailViewModel alloc] init];
     [orderDetailCell bindViewModel:orderDetailViewModel];
     [cellArr addObject:orderDetailCell];
 }

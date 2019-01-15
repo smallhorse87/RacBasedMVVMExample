@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) UITextField *textField;
 
-- (instancetype)initWithTitle:(NSString*)title;
+@property (strong, nonatomic) UILabel     *titleLabel;
 
 - (void)bindViewModel:(LabelAndTextFieldViewModel *)viewModel;
 

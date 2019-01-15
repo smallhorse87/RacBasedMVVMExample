@@ -8,9 +8,6 @@
 
 #import "OrderDetailViewModel.h"
 
-#import "HotelTitleViewModel.h"
-#import "LabelAndTextFieldViewModel.h"
-
 @implementation OrderDetailViewModel
 
 - (void)combineHotelTitleViewModel:(HotelTitleViewModel *)hotelTitleVM
@@ -33,6 +30,20 @@
     _clearCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         nameInputVM.inputText  = nil;
         phoneInputVM.inputText = nil;
+        return [RACSignal empty];
+    }];
+    
+    _submitCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        if (nameInputVM.inputText == nil) {
+            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"入住人不能为空！"};
+            NSError *error = [NSError errorWithDomain:NSCocoaErrorDomain code:-1 userInfo:userInfo];
+            return [RACSignal error:error];
+        } else if (phoneInputVM.inputText == nil) {
+            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"手机号不能为空！"};
+            NSError *error = [NSError errorWithDomain:NSCocoaErrorDomain code:-1 userInfo:userInfo];
+            return [RACSignal error:error];
+        }
+        
         return [RACSignal empty];
     }];
     

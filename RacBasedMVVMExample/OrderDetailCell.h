@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) UIButton *clearButton;
 
+@property (strong, nonatomic) UIButton *submitButton;
+
+@property (strong, nonatomic) UILabel *orderDetailLabel;
+
 @end
 
 NS_ASSUME_NONNULL_END
