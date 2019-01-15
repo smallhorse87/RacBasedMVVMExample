@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ReactiveObjC.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MVVMBaseCell : UITableViewCell
+
+@property (nonatomic, assign) CGFloat isw_height;
 
 @end
 

@@ -17,6 +17,10 @@
 		8183CA4D21ED8CAB00133FCA /* HotelTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA4C21ED8CAB00133FCA /* HotelTitleCell.m */; };
 		8183CA5021ED8CE400133FCA /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA4F21ED8CE400133FCA /* BaseViewModel.m */; };
 		8183CA5321ED8CF200133FCA /* HotelTitleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA5221ED8CF200133FCA /* HotelTitleViewModel.m */; };
+		8183CA5621ED910400133FCA /* LabelAndTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA5521ED910400133FCA /* LabelAndTextFieldCell.m */; };
+		8183CA5921ED911900133FCA /* LabelAndTextFieldViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA5821ED911900133FCA /* LabelAndTextFieldViewModel.m */; };
+		8183CA5C21EDA8EA00133FCA /* OrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA5B21EDA8EA00133FCA /* OrderDetailCell.m */; };
+		8183CA5F21EDA8FE00133FCA /* OrderDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183CA5E21EDA8FE00133FCA /* OrderDetailViewModel.m */; };
 		C59B2F157BB2BE8E544634B3 /* libPods-RacBasedMVVMExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 249131B1B8CC9D5EF7684F00 /* libPods-RacBasedMVVMExample.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,14 @@
 		8183CA4F21ED8CE400133FCA /* BaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
 		8183CA5121ED8CF200133FCA /* HotelTitleViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelTitleViewModel.h; sourceTree = "<group>"; };
 		8183CA5221ED8CF200133FCA /* HotelTitleViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelTitleViewModel.m; sourceTree = "<group>"; };
+		8183CA5421ED910400133FCA /* LabelAndTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelAndTextFieldCell.h; sourceTree = "<group>"; };
+		8183CA5521ED910400133FCA /* LabelAndTextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelAndTextFieldCell.m; sourceTree = "<group>"; };
+		8183CA5721ED911900133FCA /* LabelAndTextFieldViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelAndTextFieldViewModel.h; sourceTree = "<group>"; };
+		8183CA5821ED911900133FCA /* LabelAndTextFieldViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelAndTextFieldViewModel.m; sourceTree = "<group>"; };
+		8183CA5A21EDA8EA00133FCA /* OrderDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailCell.h; sourceTree = "<group>"; };
+		8183CA5B21EDA8EA00133FCA /* OrderDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailCell.m; sourceTree = "<group>"; };
+		8183CA5D21EDA8FE00133FCA /* OrderDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewModel.h; sourceTree = "<group>"; };
+		8183CA5E21EDA8FE00133FCA /* OrderDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewModel.m; sourceTree = "<group>"; };
 		EDFDD29FB197B379FD354C1B /* Pods-RacBasedMVVMExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RacBasedMVVMExample.debug.xcconfig"; path = "Target Support Files/Pods-RacBasedMVVMExample/Pods-RacBasedMVVMExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +114,14 @@
 				8183CA4F21ED8CE400133FCA /* BaseViewModel.m */,
 				8183CA5121ED8CF200133FCA /* HotelTitleViewModel.h */,
 				8183CA5221ED8CF200133FCA /* HotelTitleViewModel.m */,
+				8183CA5421ED910400133FCA /* LabelAndTextFieldCell.h */,
+				8183CA5521ED910400133FCA /* LabelAndTextFieldCell.m */,
+				8183CA5721ED911900133FCA /* LabelAndTextFieldViewModel.h */,
+				8183CA5821ED911900133FCA /* LabelAndTextFieldViewModel.m */,
+				8183CA5A21EDA8EA00133FCA /* OrderDetailCell.h */,
+				8183CA5B21EDA8EA00133FCA /* OrderDetailCell.m */,
+				8183CA5D21EDA8FE00133FCA /* OrderDetailViewModel.h */,
+				8183CA5E21EDA8FE00133FCA /* OrderDetailViewModel.m */,
 			);
 			path = RacBasedMVVMExample;
 			sourceTree = "<group>";
@@ -214,9 +234,13 @@
 				8183CA3521ED76A300133FCA /* ViewController.m in Sources */,
 				8183CA5321ED8CF200133FCA /* HotelTitleViewModel.m in Sources */,
 				8183CA5021ED8CE400133FCA /* BaseViewModel.m in Sources */,
+				8183CA5C21EDA8EA00133FCA /* OrderDetailCell.m in Sources */,
 				8183CA4021ED76A400133FCA /* main.m in Sources */,
 				8183CA4A21ED8C9A00133FCA /* MVVMBaseCell.m in Sources */,
 				8183CA4D21ED8CAB00133FCA /* HotelTitleCell.m in Sources */,
+				8183CA5621ED910400133FCA /* LabelAndTextFieldCell.m in Sources */,
+				8183CA5F21EDA8FE00133FCA /* OrderDetailViewModel.m in Sources */,
+				8183CA5921ED911900133FCA /* LabelAndTextFieldViewModel.m in Sources */,
 				8183CA3221ED76A300133FCA /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

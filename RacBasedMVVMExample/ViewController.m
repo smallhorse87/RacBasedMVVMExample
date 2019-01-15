@@ -14,6 +14,12 @@
 #import "HotelTitleCell.h"
 #import "HotelTitleViewModel.h"
 
+#import "LabelAndTextFieldCell.h"
+#import "LabelAndTextFieldViewModel.h"
+
+#import "OrderDetailCell.h"
+#import "OrderDetailViewModel.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *cellArr;
@@ -38,6 +44,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UITableView *tableView =  [[UITableView alloc] init];
+    tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.delegate   = self;
     tableView.dataSource = self;
@@ -61,18 +68,41 @@
     
     //标题单元格
     HotelTitleCell *hotelTitleCell = [[HotelTitleCell alloc] init];
+    hotelTitleCell.isw_height = 30;
     HotelTitleViewModel *hotelTitleVM = [[HotelTitleViewModel alloc] init];
     hotelTitleVM.title = @"美团酒店-望京国际研发园店";
     [hotelTitleCell bindViewModel:hotelTitleVM];
     [cellArr addObject:hotelTitleCell];
-    
+
+    LabelAndTextFieldCell *personLabelAndTextFieldCell    = [[LabelAndTextFieldCell alloc] initWithTitle:@"入住人:"];
+    personLabelAndTextFieldCell.isw_height = 44;
+    LabelAndTextFieldViewModel *personLabelAndTextFieldCellVM = [[LabelAndTextFieldViewModel alloc] init];
+    [personLabelAndTextFieldCell bindViewModel:personLabelAndTextFieldCellVM];
+    [cellArr addObject:personLabelAndTextFieldCell];
+
+    LabelAndTextFieldCell *phoneLabelAndTextFieldCell    = [[LabelAndTextFieldCell alloc] initWithTitle:@"手机号:"];
+    phoneLabelAndTextFieldCell.isw_height = 44;
+    LabelAndTextFieldViewModel *phoneLabelAndTextFieldVM = [[LabelAndTextFieldViewModel alloc] init];
+    [phoneLabelAndTextFieldCell bindViewModel:phoneLabelAndTextFieldVM];
+    [cellArr addObject:phoneLabelAndTextFieldCell];
+
+    OrderDetailCell *orderDetailCell = [[OrderDetailCell alloc] init];
+    orderDetailCell.isw_height = 120;
+    OrderDetailViewModel *orderDetailViewModel = [[OrderDetailViewModel alloc] init];
+    [orderDetailCell bindViewModel:orderDetailViewModel];
+    [cellArr addObject:orderDetailCell];
 }
 
 #pragma mark - table
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44.0;
+    if(cellArr==nil || cellArr.count==0)
+        return 0;
+
+    MVVMBaseCell *baseCell = cellArr[indexPath.row];
+
+    return baseCell.isw_height;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

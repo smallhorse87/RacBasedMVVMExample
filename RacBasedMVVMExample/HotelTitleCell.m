@@ -8,8 +8,6 @@
 
 #import "HotelTitleCell.h"
 
-#import "ReactiveObjC.h"
-
 #import "Masonry.h"
 
 @implementation HotelTitleCell
@@ -25,6 +23,8 @@
 
 - (void)buildUI
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.backgroundColor = [UIColor clearColor];
     _titleLabel.textColor = [UIColor blackColor];

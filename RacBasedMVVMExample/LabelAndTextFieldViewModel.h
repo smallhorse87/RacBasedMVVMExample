@@ -1,18 +1,18 @@
 //
-//  BaseViewModel.h
+//  LabelAndTextFieldViewModel.h
 //  RacBasedMVVMExample
 //
 //  Created by chenxiaosong on 2019/1/15.
 //  Copyright © 2019年 chenxiaosong. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-#import "ReactiveObjC.h"
+#import "BaseViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseViewModel : NSObject
+@interface LabelAndTextFieldViewModel : BaseViewModel
+
+@property (strong, nonatomic) NSString *inputText;
 
 @end
 
