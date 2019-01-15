@@ -16,6 +16,7 @@
 
 #import "LabelAndTextFieldCell.h"
 #import "LabelAndTextFieldViewModel.h"
+#import "PhoneInputViewModel.h"
 
 #import "OrderDetailCell.h"
 #import "OrderDetailViewModel.h"
@@ -25,10 +26,7 @@
     NSMutableArray *cellArr;
 }
 
-@property (nonatomic,strong) NSString *password;
-@property (nonatomic,strong) NSString *passwordConfirmation;
-
-@property (nonatomic,assign) BOOL      createEnabled;
+@property (nonatomic,assign) BOOL      validPhone;
 
 @end
 
@@ -87,7 +85,8 @@
     [personLabelAndTextFieldCell bindViewModel:personLabelAndTextFieldVM];
     [cellArr addObject:personLabelAndTextFieldCell];
 
-    LabelAndTextFieldViewModel *phoneLabelAndTextFieldVM = [[LabelAndTextFieldViewModel alloc] init];
+    PhoneInputViewModel *phoneLabelAndTextFieldVM = [[PhoneInputViewModel alloc] init];
+    [phoneLabelAndTextFieldVM buildVerifyPhoneSignal];
     LabelAndTextFieldCell *phoneLabelAndTextFieldCell    = [[LabelAndTextFieldCell alloc] init];
     phoneLabelAndTextFieldCell.titleLabel.text = @"手机号:";
     phoneLabelAndTextFieldCell.isw_height = 44;
@@ -103,6 +102,7 @@
     [orderDetailCell bindViewModel:orderDetailViewModel];
     [cellArr addObject:orderDetailCell];
     
+    RAC(self, validPhone) = phoneLabelAndTextFieldVM.verifyPhoneSignal;
 }
 
 #pragma mark - table

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PhoneInputViewModel : LabelAndTextFieldViewModel
 
+-(void)buildVerifyPhoneSignal;
+
 @property (strong, nonatomic) RACSignal *verifyPhoneSignal;
 
 @end
